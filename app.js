@@ -39,8 +39,10 @@ io.on('connection', function (socket) {
 // io.emit send all - socket.emit send to only that client
 
 // start server
-app.listen(port, ip);
-console.log('Server running on http://%s:%s', ip, port);
+server.listen(port, ip, function(){
+    console.log('Server running on http://%s:%s', ip, port);
+});
+
 
 // File watcher
 var chokidar = require('chokidar');
